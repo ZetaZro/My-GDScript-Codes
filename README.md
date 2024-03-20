@@ -1,4 +1,4 @@
-# My GDScript Codes
+# My GDScript Codes (Godot 4)
 
 Welcome to My GDScript Codes repository! Here you'll find useful GDScript snippets to enhance your game development experience. Feel free to utilize these snippets in your projects. No need to credit me, but it's always appreciated! If you have any questions or need assistance, don't hesitate to reach out via DM on Zeta.Zero Discord.
 
