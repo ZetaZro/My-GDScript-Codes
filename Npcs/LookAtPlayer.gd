@@ -19,7 +19,10 @@ extends Node3D
 @export var NEGATIVERotOffSetX = -1.5
 @export var POSITIVERotOffSetX = 0.7
 
-@export var MaxNeckRotationA = 4
+##Optionals
+@export var UpDirection : Vector3 = Vector3.UP
+@export var FrontOfModel : bool = true
+
 
 var ResetPose
 var Error = false
@@ -51,7 +54,7 @@ func _process(delta: float) -> void:
 			if BoneAT.override_pose == false:
 				BoneAT.override_pose = true
 		#	BoneAT.look_at(Plr.position, Vector3.UP, true)
-			var Exp = BoneAT.global_transform.looking_at(Plr.global_position,Vector3.UP,true)
+			var Exp = BoneAT.global_transform.looking_at(Plr.global_position,UpDirection,FrontOfModel)
 			BoneAT.global_transform = BoneAT.global_transform.interpolate_with(Exp,0.05)
 			var ClampX = clampf(BoneAT.rotation.x,NEGATIVERotOffSetX,POSITIVERotOffSetX)
 			var ClampY = clampf(BoneAT.rotation.y,NEGATIVERotOffSetY,POSITIVERotOffSetY)
