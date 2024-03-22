@@ -1,6 +1,6 @@
 extends Node3D
 
-##Player Her
+##Player Here
 @export var Plr : CharacterBody3D
 
 ##BoneAttachment
@@ -53,7 +53,6 @@ func _process(delta: float) -> void:
 		if PlayerEntered == true:
 			if BoneAT.override_pose == false:
 				BoneAT.override_pose = true
-		#	BoneAT.look_at(Plr.position, Vector3.UP, true)
 			var Exp = BoneAT.global_transform.looking_at(Plr.global_position,UpDirection,FrontOfModel)
 			BoneAT.global_transform = BoneAT.global_transform.interpolate_with(Exp,0.05)
 			var ClampX = clampf(BoneAT.rotation.x,NEGATIVERotOffSetX,POSITIVERotOffSetX)
